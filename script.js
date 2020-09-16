@@ -1,5 +1,5 @@
 let stageTitle = $('<h2></h2>');
-let avatarSelection = $('<div></div');
+let avatarSelection = $('<div></div>');
 let input = $('<input>');
 let submit = $('<button>Submit</button>');
 
@@ -12,7 +12,9 @@ let loadStageOne = function() {
   
   let random = scramble(Object.keys(avatars));
   for (let i = 0; i < random.length; i++) {
-      avatarSelection.append($('<img>').attr('src', avatars[random[i]].img));
+    avatarSelection.append(
+      $('<img>').attr('src', avatars[random[i]].img)
+    );
   }
 
   stageTitle.text('Choose Your Champion');
