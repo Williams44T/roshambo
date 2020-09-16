@@ -9,9 +9,10 @@ let loadStageOne = function() {
     .append(avatarSelection)
     .append(input)
     .append(submit);
-
-  for (let avatar in avatars) {
-      avatarSelection.append($('<img>').attr('src', avatars[avatar].img));
+  
+  let random = scramble(Object.keys(avatars));
+  for (let i = 0; i < random.length; i++) {
+      avatarSelection.append($('<img>').attr('src', avatars[random[i]].img));
   }
 
   stageTitle.text('Choose Your Champion');
