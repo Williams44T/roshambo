@@ -1,10 +1,13 @@
+let avatarSelection = $('<div></div');
 let input = $('<input>');
 
 let loadStageOne = function() {
-  $('#stage').empty();
-  // for (let avatar in avatars) {
-  //   $('#stage').append($('<img>').attr('src', avatars[avatar].img));
-  // }
+  $('#stage').empty().append(avatarSelection);
+
+  for (let avatar in avatars) {
+      avatarSelection.append($('<img>').attr('src', avatars[avatar].img));
+  }
+
   input.attr('placeholder', 'name your champion');
   $('#stage').append(input);
 };
