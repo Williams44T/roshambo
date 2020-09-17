@@ -10,3 +10,20 @@ let scramble = function(arr) {
 
   return scrambled;
 }
+
+let applyRadio = function(val, name, wrapee) {
+
+  return $('<div></div>')
+    .append(
+      $('<input>')
+      .attr('id', val)
+      .attr('type', 'radio')
+      .attr('name', name)
+      .attr('val', val)
+    )
+    .append(
+      $('<label></label')
+      .attr('for', val)
+      .append(wrapee)
+    );
+}
