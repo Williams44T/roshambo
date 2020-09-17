@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+header {
+  align-self: stretch;
+  flex: 1 100%;
+  text-align: center;
+}
+
+#stage {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px,
+}

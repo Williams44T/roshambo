@@ -15,7 +15,9 @@ let appendScrambledImages = function(element, object) {
   let random = scramble(Object.keys(object));
   for (let i = 0; i < random.length; i++) {
     element.append(
-      $('<img>').attr('src', object[random[i]].img)
+      $('<img>')
+        .attr('src', object[random[i]].img)
+        .addClass('avatar')
     );
   }
 }
