@@ -27,6 +27,13 @@ let loadStageOne = function() {
   input.attr('placeholder', 'name your champion');
 };
 
+let loadStageTwo = function() {
+  setStage();
+  appendScrambledImages(options,avatars);
+  title.text('Choose Your Rival');
+}
+
 $(document).ready(function() {
   loadStageOne();
+  loadStageTwo();
 });
