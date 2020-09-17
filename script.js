@@ -1,5 +1,5 @@
-let stageTitle = $('<h2></h2>');
-let avatarSelection = $('<div></div>');
+let title = $('<h2></h2>');
+let options = $('<div></div>');
 let input = $('<input>');
 let submit = $('<button>Submit</button>');
 
@@ -14,13 +14,13 @@ let appendScrambledImages = function(element, object) {
 
 let loadStageOne = function() {
   $('#stage').empty()
-    .append(stageTitle)
-    .append(avatarSelection)
+    .append(title)
+    .append(options)
     .append(input)
     .append(submit);
   
-  appendScrambledImages(avatarSelection, avatars);
-  stageTitle.text('Choose Your Champion');
+  appendScrambledImages(options, avatars);
+  title.text('Choose Your Champion');
   input.attr('placeholder', 'name your champion');
 };
 
