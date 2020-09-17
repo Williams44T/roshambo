@@ -3,6 +3,13 @@ let options = $('<div></div>');
 let input = $('<input>');
 let submit = $('<button>Submit</button>');
 
+// User Elements
+let userTitle = $('<h2></h2>');
+let userImage = $('<img>');
+let user = $('<div></div>')
+  .append(userTitle)
+  .append(userImage);
+
 let appendScrambledImages = function(element, object) {
   element.empty();
   let random = scramble(Object.keys(object));
@@ -25,6 +32,8 @@ let loadStageOne = function() {
 };
 
 let loadStageTwo = function() {
+  $('#stage').before(user);
+  userTitle.html('userAvatar<br/>Champion for<br/>userName');
   appendScrambledImages(options,avatars);
   title.text('Choose Your Rival');
   input.remove();
