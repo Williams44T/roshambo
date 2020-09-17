@@ -12,13 +12,16 @@ let appendScrambledImages = function(element, object) {
   }
 }
 
-let loadStageOne = function() {
+let setStage = function() {
   $('#stage').empty()
     .append(title)
     .append(options)
     .append(input)
     .append(submit);
-  
+}
+
+let loadStageOne = function() {
+  setStage();
   appendScrambledImages(options, avatars);
   title.text('Choose Your Champion');
   input.attr('placeholder', 'name your champion');
