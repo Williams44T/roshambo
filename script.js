@@ -4,6 +4,7 @@ let input = $('<input>');
 let submit = $('<button>Submit</button>');
 
 let appendScrambledImages = function(element, object) {
+  element.empty();
   let random = scramble(Object.keys(object));
   for (let i = 0; i < random.length; i++) {
     element.append(
