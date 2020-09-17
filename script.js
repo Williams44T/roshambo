@@ -27,6 +27,7 @@ let loadStageOne = function() {
 let loadStageTwo = function() {
   appendScrambledImages(options,avatars);
   title.text('Choose Your Rival');
+  input.remove();
 }
 
 $(document).ready(function() {
