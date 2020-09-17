@@ -13,23 +13,18 @@ let appendScrambledImages = function(element, object) {
   }
 }
 
-let setStage = function() {
+let loadStageOne = function() {
   $('#stage').empty()
     .append(title)
     .append(options)
     .append(input)
     .append(submit);
-}
-
-let loadStageOne = function() {
-  setStage();
   appendScrambledImages(options, avatars);
   title.text('Choose Your Champion');
   input.attr('placeholder', 'name your champion');
 };
 
 let loadStageTwo = function() {
-  setStage();
   appendScrambledImages(options,avatars);
   title.text('Choose Your Rival');
 }
