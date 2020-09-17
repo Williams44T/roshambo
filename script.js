@@ -14,11 +14,10 @@ let appendScrambledImages = function(element, object) {
   element.empty();
   let random = scramble(Object.keys(object));
   for (let i = 0; i < random.length; i++) {
-    element.append(
-      $('<img>')
-        .attr('src', object[random[i]].img)
-        .addClass('avatar')
-    );
+    let image = $('<img>')
+      .attr('src', object[random[i]].img)
+      .addClass('avatar');
+    element.append(applyRadio(random[i], 'options', image));
   }
 }
 
