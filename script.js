@@ -27,6 +27,16 @@ let appendScrambledImages = function(element, object) {
   }
 }
 
+let getUserChoice = function() {
+  let choices = $('[name="options"]');
+  for (let i = 0; i < choices.length; i++) {
+    if (choices[i].checked) { 
+      return choices[i].getAttribute('val');
+      break; 
+    }
+  }
+}
+
 let loadStageOne = function() {
   $('#stage').empty()
     .append(title)
