@@ -10,7 +10,7 @@ let userInfo = {
 }
 
 // User Elements
-let userTitle = $('<h2></h2>');
+let userTitle = $('<h2></h2>').text(userInfo.name);
 let userImage = $('<img>');
 let user = $('<div></div>')
   .append(userTitle)
@@ -35,6 +35,9 @@ let getUserChoice = function() {
       break; 
     }
   }
+
+  let random = Math.floor(Math.random() * choices.length);
+  return choices[random].getAttribute('val');
 }
 
 let loadStageOne = function() {
@@ -53,7 +56,7 @@ let loadUserInfo = function() {
   let selection = getUserChoice();
   userInfo.champion = selection;
   userInfo.avatar = avatars[selection].img;
-  userInfo.name = $('#textInput').val();
+  userInfo.name = $('#textInput').val() || 'anon';
 }
 
 let loadStageTwo = function() {
