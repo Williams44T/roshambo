@@ -27,19 +27,6 @@ let appendScrambledImages = function(element, object) {
   }
 }
 
-let getUserChoice = function() {
-  let choices = $('[name="options"]');
-  for (let i = 0; i < choices.length; i++) {
-    if (choices[i].checked) { 
-      return choices[i].getAttribute('val');
-      break; 
-    }
-  }
-
-  let random = Math.floor(Math.random() * choices.length);
-  return choices[random].getAttribute('val');
-}
-
 let loadStageOne = function() {
   $('#stage').empty()
     .append(title)
@@ -53,7 +40,7 @@ let loadStageOne = function() {
 }
 
 let loadUserInfo = function() {
-  let selection = getUserChoice();
+  let selection = getRadioSelection('options', true);
   userInfo.champion = selection;
   userInfo.avatar = avatars[selection].img;
   userInfo.name = $('#textInput').val() || 'anon';

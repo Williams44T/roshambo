@@ -27,3 +27,21 @@ let applyRadio = function(val, name, wrapee) {
       .append(wrapee)
     );
 }
+
+let getRadioSelection = function(name, random) {
+  let choices = $(`[name=${name}]`);
+  
+  for (let i = 0; i < choices.length; i++) {
+    if (choices[i].checked) { 
+      return choices[i].getAttribute('val');
+      break; 
+    }
+  }
+  
+  if (random === true) {
+    let random = Math.floor(Math.random() * choices.length);
+    return choices[random].getAttribute('val');
+  }
+
+  return null;
+}
