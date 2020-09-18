@@ -2,6 +2,12 @@ let title = $('<h2></h2>');
 let options = $('<div></div>');
 let input = $('<input>');
 let submit = $('<button>Submit</button>');
+let userInfo = {
+  name: '',
+  champion: '',
+  avatar: '',
+  results: [], // will host round#, weapon choice, result
+}
 
 // User Elements
 let userTitle = $('<h2></h2>');
