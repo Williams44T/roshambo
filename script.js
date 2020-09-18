@@ -11,7 +11,7 @@ let userInfo = {
 
 // User Elements
 let userTitle = $('<h2></h2>').text(userInfo.name);
-let userImage = $('<img>');
+let userImage = $('<img class="avatar">');
 let user = $('<div></div>')
   .append(userTitle)
   .append(userImage);
@@ -57,11 +57,13 @@ let loadUserInfo = function() {
   userInfo.champion = selection;
   userInfo.avatar = avatars[selection].img;
   userInfo.name = $('#textInput').val() || 'anon';
+  loadStageTwo();
 }
 
 let loadStageTwo = function() {
   $('#stage').before(user);
-  userTitle.html('userAvatar<br/>Champion for<br/>userName');
+  userTitle.html(userInfo.champion + "<br/>Champion for<br/>" + userInfo.name);
+  userImage.attr('src', userInfo.avatar);
   appendScrambledImages(options,avatars);
   title.text('Choose Your Rival');
   input.remove();
@@ -69,5 +71,4 @@ let loadStageTwo = function() {
 
 $(document).ready(function() {
   loadStageOne();
-  // loadStageTwo();
 });
