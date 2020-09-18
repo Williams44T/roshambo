@@ -1,6 +1,6 @@
 let title = $('<h2></h2>');
 let options = $('<div></div>');
-let input = $('<input>');
+let input = $('<input id="textInput">');
 let submit = $('<button>Submit</button>');
 let userInfo = {
   name: '',
@@ -46,7 +46,15 @@ let loadStageOne = function() {
   appendScrambledImages(options, avatars);
   title.text('Choose Your Champion');
   input.attr('placeholder', 'name your champion');
-};
+  submit.click(loadUserInfo);
+}
+
+let loadUserInfo = function() {
+  let selection = getUserChoice();
+  userInfo.champion = selection;
+  userInfo.avatar = avatars[selection].img;
+  userInfo.name = $('#textInput').val();
+}
 
 let loadStageTwo = function() {
   $('#stage').before(user);
@@ -58,5 +66,5 @@ let loadStageTwo = function() {
 
 $(document).ready(function() {
   loadStageOne();
-  loadStageTwo();
+  // loadStageTwo();
 });
