@@ -20,6 +20,11 @@ let userInfo = {
   avatar: '',
   results: [], // will host round#, weapon choice, result
 }
+let rivalInfo = {
+  rival: '',
+  avatar: '',
+  results: [],
+}
 
 // User Elements
 let userTitle = $('<h2></h2>').text(userInfo.name);
@@ -27,3 +32,10 @@ let userImage = $('<img class="avatar">');
 let user = $('<div></div>')
   .append(userTitle)
   .append(userImage);
+
+// Rival Elements
+let rivalTitle = $('<h2></h2>');
+let rivalImage = $('<img class="avatar">');
+let rival = $('<div></div>')
+  .append(rivalTitle)
+  .append(rivalImage);
