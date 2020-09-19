@@ -44,6 +44,17 @@ let loadRivalInfo = function() {
   let selection = getRadioSelection('options', true);
   rivalInfo.rival = selection;
   rivalInfo.avatar = avatars[selection].img;
+  loadStageThree();
+}
+
+let loadStageThree = function() {
+  $('#stage').after(rival);
+  rivalTitle.html(rivalInfo.rival);
+  rivalImage.attr('src', rivalInfo.avatar);
+  title.text('Choose Your BattleGround');
+  submit.remove();
+  $('#stage').append(input)
+    .append(submit);
 }
 
 $(document).ready(function() {
