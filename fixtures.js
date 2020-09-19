@@ -11,15 +11,15 @@ let avatars = {
 };
 
 let battlefields = {
-  deathstar: { img: './image/battlefields/deathstar.jpg'},
-  desert: { img: './image/battlefields/desert.jpg'},
-  kame: { img: './image/battlefields/kame.png'},
-  lava: { img: './image/battlefields/lava.jpeg'},
-  namek: { img: './image/battlefields/namek.jpeg'},
-  sky: { img: './image/battlefields/sky.jpeg'},
-  space: { img: './image/battlefields/space.jpeg'},
-  water: { img: './image/battlefields/water.jpeg'},
-  woods: { img: './image/battlefields/woods.jpeg'},
+  deathstar: { img: './images/battlefields/deathstar.jpg' },
+  desert: { img: './images/battlefields/desert.jpg' },
+  kame: { img: './images/battlefields/kame.png' },
+  lava: { img: './images/battlefields/lava.jpeg' },
+  namek: { img: './images/battlefields/namek.jpeg' },
+  sky: { img: './images/battlefields/sky.jpeg' },
+  space: { img: './images/battlefields/space.jpeg' },
+  water: { img: './images/battlefields/water.jpeg' },
+  woods: { img: './images/battlefields/woods.jpeg' },
 }
 
 let title = $('<h2></h2>');

@@ -52,6 +52,7 @@ let loadStageThree = function() {
   rivalTitle.html(rivalInfo.rival);
   rivalImage.attr('src', rivalInfo.avatar);
   title.text('Choose Your BattleGround');
+  appendScrambledImages(options, battlefields);
   submit.remove();
   $('#stage').append(input)
     .append(submit);
