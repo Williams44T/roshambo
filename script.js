@@ -11,14 +11,14 @@ let appendScrambledImages = function(element, object, cls) {
 
 let loadStageOne = function() {
   $('#stage').empty()
-    .append(title)
-    .append(options)
-    .append(input)
-    .append(submit);
-  appendScrambledImages(options, avatars, 'avatars');
-  title.text('Choose Your Champion');
-  input.attr('placeholder', 'name your champion');
-  submit.click(loadUserInfo);
+    .append(stageTitle)
+    .append(stageOptions)
+    .append(stageInput)
+    .append(stageSubmit);
+  appendScrambledImages(stageOptions, avatars, 'avatars');
+  stageTitle.text('Choose Your Champion');
+  stageInput.attr('placeholder', 'name your champion');
+  stageSubmit.click(loadUserInfo);
 }
 
 let loadUserInfo = function() {
@@ -33,11 +33,11 @@ let loadStageTwo = function() {
   $('#stage').before(user);
   userTitle.html(userInfo.champion + "<br/>Champion for<br/>" + userInfo.name);
   userImage.attr('src', userInfo.avatar);
-  appendScrambledImages(options,avatars, 'avatars');
-  title.text('Choose Your Rival');
-  input.remove();
-  submit.remove();
-  $('#stage').append(submit.click(loadRivalInfo));
+  appendScrambledImages(stageOptions, avatars, 'avatars');
+  stageTitle.text('Choose Your Rival');
+  stageInput.remove();
+  stageSubmit.remove();
+  $('#stage').append(stageSubmit.click(loadRivalInfo));
 }
 
 let loadRivalInfo = function() {
@@ -51,11 +51,11 @@ let loadStageThree = function() {
   $('#stage').after(rival);
   rivalTitle.html(rivalInfo.rival);
   rivalImage.attr('src', rivalInfo.avatar);
-  title.text('Choose Your BattleGround');
-  appendScrambledImages(options, battlefields, 'battlefields');
-  submit.remove();
-  $('#stage').append(input)
-    .append(submit);
+  stageTitle.text('Choose Your BattleGround');
+  appendScrambledImages(stageOptions, battlefields, 'battlefields');
+  stageSubmit.remove();
+  $('#stage').append(stageInput)
+    .append(stageSubmit);
 }
 
 $(document).ready(function() {

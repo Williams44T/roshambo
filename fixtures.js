@@ -22,10 +22,11 @@ let battlefields = {
   woods: { img: './images/battlefields/woods.jpeg' },
 }
 
-let title = $('<h2></h2>');
-let options = $('<div></div>');
-let input = $('<input id="textInput">');
-let submit = $('<button>Submit</button>');
+let stageTitle = $('<h2></h2>');
+let stageOptions = $('<div></div>');
+let stageInput = $('<input id="textInput">');
+let stageSubmit = $('<button>Submit</button>');
+
 let userInfo = {
   name: '',
   champion: '',
