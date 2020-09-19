@@ -36,6 +36,14 @@ let loadStageTwo = function() {
   appendScrambledImages(options,avatars);
   title.text('Choose Your Rival');
   input.remove();
+  submit.remove();
+  $('#stage').append(submit.click(loadRivalInfo));
+}
+
+let loadRivalInfo = function() {
+  let selection = getRadioSelection('options', true);
+  rivalInfo.rival = selection;
+  rivalInfo.avatar = avatars[selection].img;
 }
 
 $(document).ready(function() {
