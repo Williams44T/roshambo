@@ -1,10 +1,10 @@
-let appendScrambledImages = function(element, object) {
+let appendScrambledImages = function(element, object, cls) {
   element.empty();
   let random = scramble(Object.keys(object));
   for (let i = 0; i < random.length; i++) {
     let image = $('<img>')
       .attr('src', object[random[i]].img)
-      .addClass('avatar');
+      .addClass(cls);
     element.append(applyRadio(random[i], 'options', image));
   }
 }
@@ -15,7 +15,7 @@ let loadStageOne = function() {
     .append(options)
     .append(input)
     .append(submit);
-  appendScrambledImages(options, avatars);
+  appendScrambledImages(options, avatars, 'avatars');
   title.text('Choose Your Champion');
   input.attr('placeholder', 'name your champion');
   submit.click(loadUserInfo);
@@ -33,7 +33,7 @@ let loadStageTwo = function() {
   $('#stage').before(user);
   userTitle.html(userInfo.champion + "<br/>Champion for<br/>" + userInfo.name);
   userImage.attr('src', userInfo.avatar);
-  appendScrambledImages(options,avatars);
+  appendScrambledImages(options,avatars, 'avatars');
   title.text('Choose Your Rival');
   input.remove();
   submit.remove();
@@ -52,7 +52,7 @@ let loadStageThree = function() {
   rivalTitle.html(rivalInfo.rival);
   rivalImage.attr('src', rivalInfo.avatar);
   title.text('Choose Your BattleGround');
-  appendScrambledImages(options, battlefields);
+  appendScrambledImages(options, battlefields, 'battlefields');
   submit.remove();
   $('#stage').append(input)
     .append(submit);

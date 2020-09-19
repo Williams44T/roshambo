@@ -40,14 +40,14 @@ let rivalInfo = {
 
 // User Elements
 let userTitle = $('<h2></h2>').text(userInfo.name);
-let userImage = $('<img class="avatar">');
+let userImage = $('<img class="avatars">');
 let user = $('<div></div>')
   .append(userTitle)
   .append(userImage);
 
 // Rival Elements
 let rivalTitle = $('<h2></h2>');
-let rivalImage = $('<img class="avatar">');
+let rivalImage = $('<img class="avatars">');
 let rival = $('<div></div>')
   .append(rivalTitle)
   .append(rivalImage);
