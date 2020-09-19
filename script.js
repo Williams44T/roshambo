@@ -52,7 +52,8 @@ let loadStageThree = function() {
   rivalImage.attr('src', rivalInfo.avatar);
   stageTitle.text('Choose Your BattleGround');
   appendScrambledImages(stageOptions, battlefields, 'battlefields');
-  stageSubmit.before(stageInput);
+  stageSubmit.before(stageInput.val(''));
+  stageInput.attr('placeholder', 'decide the number of rounds')
 }
 
 $(document).ready(function() {
