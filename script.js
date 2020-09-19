@@ -37,7 +37,6 @@ let loadStageTwo = function() {
   stageTitle.text('Choose Your Rival');
   stageInput.remove();
   stageSubmit.off().click(loadRivalInfo);
-  // $('#stage').append(stageSubmit.click(loadRivalInfo));
 }
 
 let loadRivalInfo = function() {
