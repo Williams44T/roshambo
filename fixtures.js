@@ -9,3 +9,21 @@ let avatars = {
   vegeta: { img: './images/avatars/vegeta.png' },
   zoro: { img: './images/avatars/zoro.png' }
 };
+
+let title = $('<h2></h2>');
+let options = $('<div></div>');
+let input = $('<input id="textInput">');
+let submit = $('<button>Submit</button>');
+let userInfo = {
+  name: '',
+  champion: '',
+  avatar: '',
+  results: [], // will host round#, weapon choice, result
+}
+
+// User Elements
+let userTitle = $('<h2></h2>').text(userInfo.name);
+let userImage = $('<img class="avatar">');
+let user = $('<div></div>')
+  .append(userTitle)
+  .append(userImage);
