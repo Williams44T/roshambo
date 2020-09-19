@@ -36,8 +36,8 @@ let loadStageTwo = function() {
   appendScrambledImages(stageOptions, avatars, 'avatars');
   stageTitle.text('Choose Your Rival');
   stageInput.remove();
-  stageSubmit.remove();
-  $('#stage').append(stageSubmit.click(loadRivalInfo));
+  stageSubmit.off().click(loadRivalInfo);
+  // $('#stage').append(stageSubmit.click(loadRivalInfo));
 }
 
 let loadRivalInfo = function() {
@@ -53,9 +53,7 @@ let loadStageThree = function() {
   rivalImage.attr('src', rivalInfo.avatar);
   stageTitle.text('Choose Your BattleGround');
   appendScrambledImages(stageOptions, battlefields, 'battlefields');
-  stageSubmit.remove();
-  $('#stage').append(stageInput)
-    .append(stageSubmit);
+  stageSubmit.before(stageInput);
 }
 
 $(document).ready(function() {
