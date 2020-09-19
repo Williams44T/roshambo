@@ -10,6 +10,18 @@ let avatars = {
   zoro: { img: './images/avatars/zoro.png' }
 };
 
+let battlefields = {
+  deathstar: { img: './image/battlefields/deathstar.jpg'},
+  desert: { img: './image/battlefields/desert.jpg'},
+  kame: { img: './image/battlefields/kame.png'},
+  lava: { img: './image/battlefields/lava.jpeg'},
+  namek: { img: './image/battlefields/namek.jpeg'},
+  sky: { img: './image/battlefields/sky.jpeg'},
+  space: { img: './image/battlefields/space.jpeg'},
+  water: { img: './image/battlefields/water.jpeg'},
+  woods: { img: './image/battlefields/woods.jpeg'},
+}
+
 let title = $('<h2></h2>');
 let options = $('<div></div>');
 let input = $('<input id="textInput">');
