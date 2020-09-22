@@ -53,7 +53,13 @@ let loadStageThree = function() {
   stageTitle.text('Choose Your BattleGround');
   appendScrambledImages(stageOptions, battlefields, 'battlefields');
   stageSubmit.before(stageInput.val(''));
+  stageSubmit.off().click(loadStageFour);
   stageInput.attr('placeholder', 'decide the number of rounds')
+}
+
+let loadStageFour = function() {
+  let battlefield = getRadioSelection('options', true);
+  $('#arena').css('background-image', 'url(' + battlefields[battlefield].img + ')');
 }
 
 $(document).ready(function() {
