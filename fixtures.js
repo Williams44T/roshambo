@@ -22,6 +22,12 @@ let battlefields = {
   woods: { img: './images/battlefields/woods.jpeg' },
 }
 
+let weapons = {
+  rock: { img: './images/weapons/rock-with-face.png' },
+  paper: { img: './images/weapons/paper-with-face.png' },
+  scissors: { img: './images/weapons/scissors-with-face.png' },
+}
+
 let stageTitle = $('<h2></h2>');
 let stageOptions = $('<div></div>');
 let stageInput = $('<input id="textInput">');

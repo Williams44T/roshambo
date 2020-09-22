@@ -60,6 +60,7 @@ let loadStageThree = function() {
 let loadStageFour = function() {
   let battlefield = getRadioSelection('options', true);
   $('#arena').css('background-image', 'url(' + battlefields[battlefield].img + ')');
+  appendScrambledImages(stageOptions, weapons, 'avatars');
 }
 
 $(document).ready(function() {
