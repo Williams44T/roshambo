@@ -60,7 +60,10 @@ let loadStageThree = function() {
 let loadStageFour = function() {
   let battlefield = getRadioSelection('options', true);
   $('#arena').css('background-image', 'url(' + battlefields[battlefield].img + ')');
+  stageTitle.text('DoubleTap Your Weapon');
   appendScrambledImages(stageOptions, weapons, 'avatars');
+  stageInput.remove();
+  stageSubmit.remove();
 }
 
 $(document).ready(function() {
