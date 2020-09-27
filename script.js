@@ -13,7 +13,6 @@ let loadStageOne = function() {
   $('#stage').empty()
     .append(stageTitle)
     .append(stageOptions)
-    .append(stageInput)
     .append(stageSubmit);
   appendScrambledImages(stageOptions, avatars, 'avatars');
   stageTitle.text('Choose Your Champion');
@@ -25,17 +24,15 @@ let loadUserInfo = function() {
   let selection = getRadioSelection('options', true);
   userInfo.champion = selection;
   userInfo.avatar = avatars[selection].img;
-  userInfo.name = $('#textInput').val() || 'anon';
   loadStageTwo();
 }
 
 let loadStageTwo = function() {
   $('#stage').before(user);
-  userTitle.html(userInfo.champion + "<br/>Champion for<br/>" + userInfo.name);
+  userTitle.text(userInfo.champion);
   userImage.attr('src', userInfo.avatar);
   appendScrambledImages(stageOptions, avatars, 'avatars');
   stageTitle.text('Choose Your Rival');
-  stageInput.remove();
   stageSubmit.off().click(loadRivalInfo);
 }
 
@@ -52,7 +49,7 @@ let loadStageThree = function() {
   rivalImage.attr('src', rivalInfo.avatar);
   stageTitle.text('Choose Your BattleGround');
   appendScrambledImages(stageOptions, battlefields, 'battlefields');
-  stageSubmit.before(stageInput.val(''));
+  stageSubmit.before(stageInput);
   stageSubmit.off().click(loadStageFour);
   stageInput.attr('placeholder', 'decide the number of rounds')
 }
