@@ -38,10 +38,12 @@ let getRadioSelection = function(name, random) {
     }
   }
   
-  if (random === true) {
-    let random = Math.floor(Math.random() * choices.length);
-    return choices[random].getAttribute('val');
-  }
+  if (random === true) { return getRandom(choices).getAttribute('val'); }
 
   return null;
+}
+
+let getRandom = function(array) {
+  let random = Math.floor(Math.random() * array.length);
+  return array[random];
 }
