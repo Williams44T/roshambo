@@ -37,11 +37,13 @@ let userInfo = {
   name: '',
   champion: '',
   avatar: '',
+  score: 0,
   results: [], // will host round#, weapon choice, result
 }
 let rivalInfo = {
   rival: '',
   avatar: '',
+  score: 0,
   results: [],
 }
 
@@ -58,3 +60,15 @@ let rivalImage = $('<img class="avatars">');
 let rival = $('<div></div>')
   .append(rivalTitle)
   .append(rivalImage);
+
+// Tracker Elements
+let currentRound = 1;
+let roundMax; // set by user
+let roundDisplay = $('<div></div>').text(`ROUND ${currentRound}`);
+let userScore = $('<div></div>').text(userInfo.score);
+let rivalScore = $('<div></div>').text(rivalInfo.score);
+let tracker = $('<div></div>')
+  .append(userScore)
+  .append(roundDisplay)
+  .append(rivalScore);
+

@@ -61,6 +61,7 @@ let loadStageFour = function() {
   appendScrambledImages(stageOptions, weapons, 'avatars');
   stageInput.remove();
   stageSubmit.remove();
+  $('#stage').append(tracker);
 }
 
 $(document).ready(function() {
