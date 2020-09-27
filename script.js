@@ -64,6 +64,35 @@ let loadStageFour = function() {
   $('#stage').append(tracker);
 }
 
+let playRound = function() {
+  let userWeapon = getRadioSelection('options');
+  let rivalWeapon = getRandom(Object.keys(weapons));
+  let winner;
+  if (userWeapon === rivalWeapon) { winner = 'DRAW' };
+  if (userWeapon === 'rock') {
+    if (rivalWeapon === 'paper') { winner = rivalInfo.rival };
+    if (rivalWeapon === 'scissors') { winner = userInfo.champion };
+  }
+  if (userWeapon === 'paper') {
+    if (rivalWeapon === 'rock') { winner = userInfo.champion };
+    if (rivalWeapon === 'scissors') { winner = rivalInfo.rival };
+  }
+  if (userWeapon === 'scissors') {
+    if (rivalWeapon === 'rock') { winner = rivalInfo.rival };
+    if (rivalWeapon === 'paper') { winner = userInfo.champion };
+  }
+  if (winner === 'DRAW') {
+    alert('IT"S A DRAW');
+  } else {
+    alert(`AND THE WINNER IS....${winner}`);
+  }
+  //currently both scores are updated if the champion === rival
+  //will need to disable the user avatar as an option for the rival
+  if (winner === userInfo.champion) { userScore.text(++userInfo.score) };
+  if (winner === rivalInfo.rival) { rivalScore.text(++rivalInfo.score) };
+  roundDisplay.text(`ROUND ${++currentRound}`);
+}
+
 $(document).ready(function() {
   loadStageOne();
 });
