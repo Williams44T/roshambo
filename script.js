@@ -59,6 +59,7 @@ let loadStageFour = function() {
   $('#arena').css('background-image', 'url(' + battlefields[battlefield].img + ')');
   stageTitle.text('DoubleTap Your Weapon');
   appendScrambledImages(stageOptions, weapons, 'avatars');
+  $('.avatars').dblclick(playRound);
   stageInput.remove();
   stageSubmit.remove();
   $('#stage').append(tracker);
