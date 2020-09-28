@@ -55,6 +55,11 @@ let loadStageThree = function() {
 }
 
 let loadStageFour = function() {
+  roundMax = Math.ceil(Math.abs(+stageInput.val().split(',').join('')));
+  if (isNaN(roundMax)) { 
+    alert(`${stageInput.val()} is not an appropriate amount of rounds`)
+    return;
+  }
   let battlefield = getRadioSelection('options', true);
   $('#arena').css('background-image', 'url(' + battlefields[battlefield].img + ')');
   stageTitle.text('DoubleTap Your Weapon');
@@ -91,8 +96,27 @@ let playRound = function() {
   //will need to disable the user avatar as an option for the rival
   if (winner === userInfo.champion) { userScore.text(++userInfo.score) };
   if (winner === rivalInfo.rival) { rivalScore.text(++rivalInfo.score) };
+  if (currentRound === roundMax) { declareWinner() };
   roundDisplay.text(`ROUND ${++currentRound}`);
 }
+
+let declareWinner = function() {
+  stageOptions.remove();
+  tracker.remove();
+  user.remove();
+  rival.remove();
+  if (userInfo.score === rivalInfo.score) {
+    stageTitle.remove();
+    $('#stage').text('IT\'S A DRAW!!!!');
+    return;
+  }
+  let winner;
+  if (userInfo.score > rivalInfo.score) { winner = userInfo.avatar };
+  if (userInfo.score < rivalInfo.score) { winner = rivalInfo.avatar };
+  stageTitle.text('THE WINNER!!!!');
+  $('#stage').append($('<img>')
+    .attr('src', winner));
+} 
 
 $(document).ready(function() {
   loadStageOne();
