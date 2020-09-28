@@ -29,7 +29,7 @@ let weapons = {
 }
 
 let stageTitle = $('<h2></h2>');
-let stageOptions = $('<div></div>');
+let stageOptions = $('<div class="options"></div>');
 let stageInput = $('<input id="textInput">');
 let stageSubmit = $('<button>Submit</button>');
 

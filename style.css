@@ -16,6 +16,12 @@ header {
   justify-content: center;
 }
 
+.options {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
 .avatars, 
 .battlefields {
   width: 100px;
