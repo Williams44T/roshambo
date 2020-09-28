@@ -10,6 +10,12 @@ header {
   text-align: center;
 }
 
+#arena {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 #stage {
   display: flex;
   flex-direction: column;
@@ -21,7 +27,6 @@ header {
   flex-flow: row wrap;
   justify-content: center;
   max-width: 450px;
-  /* flex-basis: 100%; */
 }
 
 .avatars, 
