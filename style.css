@@ -12,8 +12,10 @@ header {
 
 #stage {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* flex-flow: row wrap; */
+  /* justify-content: center; */
 }
 
 .options {
