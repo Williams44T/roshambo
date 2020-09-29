@@ -12,6 +12,8 @@ header {
 
 h2 {
   text-align: center;
+  color: whitesmoke;
+  text-transform: uppercase;
 }
 
 [type="radio"] {
@@ -28,6 +30,10 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: ridge 2px black;
+  border-radius: 10%;
+  background-color: rgb(163, 26, 26);
+  box-shadow: 10px 10px 15px black;
 }
 
 .options {
@@ -39,6 +45,21 @@ h2 {
 
 .avatars, 
 .battlefields {
-  width: 100px;
-  height: 100px,
+  width: 120px;
+  height: 120px;
+  margin: 2px;
+  border: 2px ridge whitesmoke;
+  border-radius: 50%;
+  background-color: goldenrod;
+  box-shadow: 10px 10px 15px black;
+}
+
+button {
+  margin: 10px;
+  border: 1px ridge whitesmoke;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: black;
+  color: whitesmoke;
+  text-transform: uppercase;
 }
